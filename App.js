@@ -12,7 +12,7 @@ const PORT = 5500;
 app.use(express.json());
 app.use(
   cors({
-    origin: [`http://localhost:3000`, `https://pocketpilot-app.netlify.app/`],
+    origin: [`http://localhost:3000`, `https://pocketpilot-app.netlify.app`],
     credentials: true,
   })
 );
