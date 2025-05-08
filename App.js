@@ -10,7 +10,12 @@ const app = express();
 const PORT = 5500;
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 
 // app.use((req, res, next) => {
 //   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -19,18 +24,20 @@ app.use(cors());
 //   next();
 // });
 
-{/*mongoose
-  .connect("mongodb://127.0.0.1:27017/Expense") */}
+{
+  /*mongoose
+  .connect("mongodb://127.0.0.1:27017/Expense") */
+}
 
-  const uri = process.env.MONGODB_URI;
-   
-  console.log('MongoDB URI:', process.env.MONGODB_URI)
+const uri = process.env.MONGODB_URI;
 
-   mongoose
-    .connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
+console.log("MongoDB URI:", process.env.MONGODB_URI);
+
+mongoose
+  .connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("✅ MongoDB Connected Successfully"))
   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
@@ -80,16 +87,15 @@ app.get("/addexpenses", (req, res) => {
 
 app.put("/Update/:_id", (req, res) => {
   AddExpenses.findByIdAndUpdate(req.params._id, req.body, { new: true })
-    .then(data => res.json(data))
-    .catch(err => res.json(err));
+    .then((data) => res.json(data))
+    .catch((err) => res.json(err));
 });
 
 app.delete("/Delete/:_id", (req, res) => {
   AddExpenses.findByIdAndDelete(req.params._id)
     .then(() => res.json({ message: "Expense Deleted Successfully" }))
-    .catch(err => res.status(500).json({ error: err.message }));
+    .catch((err) => res.status(500).json({ error: err.message }));
 });
-
 
 // app.use('/', routes);//
 
