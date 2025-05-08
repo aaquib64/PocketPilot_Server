@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "name":"Lunch with friends",
+        "amount":1500.00,
+        "date": "10-Oct-2025"
+    },
+    {
+        "id": 2,
+        "name":"Breakfast",
+        "amount":100.00,
+        "date": "5-Jan-2025"
+    },
+    {
+        "id": 3,
+        "name":"Dinner with family",
+        "amount":2500.00,
+        "date": "20-Mar-2025"
+    }
+
+]

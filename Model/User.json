@@ -1,0 +1,23 @@
+[
+    {
+        "id":1,
+        "username":"Aaquibshaikh64",
+        "password": "Aaquib@12345",
+        "email": "abc@123gmail.com",
+        "name": "Aaquib Shaikh"
+    },
+    {
+        "id":2,
+        "username":"shaikh786",
+        "password": "Shaikh@123",
+        "email": "shaikh@123gmail.com",
+        "name": "Shaikh Sahab"
+    },
+    {
+        "id":3,
+        "username":"Malik313",
+        "password": "Malik@313",
+        "email": "malik@313gmail.com",
+        "name": "Zain Malik"
+    }
+]
